@@ -48,7 +48,7 @@ The biggest challenge was distinguishing **real section headers** from **inline 
 
 ### What It Does
 
-Embeds all 45 CCPA sections using `all-MiniLM-L6-v2` and indexes them in FAISS for natural-language search.
+Embeds all 45 CCPA sections using `all-MiniLM-L6-v2` and indexes them in FAISS for natural-language search. This acts as the context engine for the local LLM (Llama 3 8B) compliance checker.
 
 ### How It Works
 
