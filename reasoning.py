@@ -1,7 +1,7 @@
 """
 CCPA Constrained Legal Reasoning Module
 =========================================
-Uses a local Mistral 7B (GGUF) model via llama-cpp-python to analyze
+Uses a local Llama 3 8B (GGUF) model via llama-cpp-python to analyze
 business practices against retrieved CCPA statute sections.
 
 The model is loaded once at module level and reused across calls.
@@ -19,7 +19,7 @@ from retrieval import CCPARetriever
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-MODEL_PATH = "models/mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+MODEL_PATH = "models/Meta-Llama-3-8B-Instruct-Q4_K_M.gguf"
 
 # ---------------------------------------------------------------------------
 # Module-level singletons — loaded once on first import

@@ -8,7 +8,7 @@ A two-stage system that parses the California Consumer Privacy Act (CCPA) statut
 
 ## Stage 1: PDF Parsing → `ccpa_sections.json`
 
-**Script:** [parse_statute.py](file:///Users/wizard/Desktop/ccpa%20hackathon/%20parse_statute.py)
+**Script:** [parse_statute.py](file:///Users/wizard/Desktop/ccpa%20hackathon/parse_statute.py)
 
 ### What It Does
 
