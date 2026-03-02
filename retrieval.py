@@ -137,28 +137,3 @@ class CCPARetriever:
         return results
 
 
-# ---------------------------------------------------------------------------
-# Demo / CLI entry point
-# ---------------------------------------------------------------------------
-def main() -> None:
-    # Build the retriever (embeddings are computed once here)
-    retriever = CCPARetriever()
-
-    # Test query
-    test_query = "We sell customer data without notifying users."
-    print(f'Test query: "{test_query}"\n')
-
-    results = retriever.retrieve_sections(test_query, top_k=3)
-
-    print(f"Top {len(results)} retrieved sections:")
-    print("=" * 60)
-    for rank, (name, text) in enumerate(results, 1):
-        print(f"\n  {rank}. {name}")
-        # Show a preview of the section text
-        preview = text[:300].replace("\n", " ")
-        print(f"     {preview}...")
-        print("-" * 60)
-
-
-if __name__ == "__main__":
-    main()

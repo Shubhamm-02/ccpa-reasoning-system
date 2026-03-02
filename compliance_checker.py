@@ -104,25 +104,3 @@ def check_compliance(prompt: str) -> dict:
         return {"harmful": False, "articles": []}
 
 
-# ---------------------------------------------------------------------------
-# CLI test
-# ---------------------------------------------------------------------------
-if __name__ == "__main__":
-    test_cases = [
-        # 1. Harmful case (should hit the heuristic: "without notifying users")
-        "We sell customer data without notifying users directly.",
-        
-        # 2. Safe case (should bypass heuristic, go to LLM, and return safe)
-        "We use a consumer's billing address solely to ship the product they ordered."
-    ]
-
-    print("=" * 60)
-    print("TESTING COMPLIANCE CHECKER")
-    print("=" * 60)
-
-    for i, test_prompt in enumerate(test_cases, 1):
-        print(f"\n[Scenario {i}]")
-        print(f"Prompt: \"{test_prompt}\"")
-        res = check_compliance(test_prompt)
-        print(f"Result: {res}")
-        print("-" * 60)

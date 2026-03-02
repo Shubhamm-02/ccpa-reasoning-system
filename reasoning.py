@@ -148,33 +148,3 @@ Respond with ONLY the JSON object.
     return {"harmful": harmful, "articles": filtered_articles}
 
 
-# ---------------------------------------------------------------------------
-# CLI test
-# ---------------------------------------------------------------------------
-if __name__ == "__main__":
-    test_prompts = [
-        # 1. Non-compliant (selling without notice)
-        "We sell customer browsing history without notifying users.",
-        # 2. Compliant (normal service delivery)
-        "We use a consumer's billing address solely to ship the product they ordered.",
-        # 3. Non-compliant (discrimination)
-        "We charge users $5 more per month if they choose to opt out of data selling.",
-        # 4. Compliant (security)
-        "We retain IP addresses temporarily to detect and prevent DDoS attacks.",
-        # 5. Non-compliant (minors)
-        "We sell personal data of 14-year-old users by default without asking for opt-in.",
-        # 6. Ambiguous/Unrelated
-        "Our company allows employees to work from home on Fridays."
-    ]
-
-    print("=" * 60)
-    print("TESTING REASONING MODULE")
-    print("=" * 60)
-
-    for i, prompt in enumerate(test_prompts, 1):
-        print(f"\n[Scenario {i}]")
-        print(f"Practice: \"{prompt}\"")
-        result = analyze_prompt(prompt)
-        print(f"Result:   {json.dumps(result)}")
-        print("-" * 60)
-
