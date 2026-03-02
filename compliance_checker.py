@@ -20,11 +20,20 @@ from reasoning import analyze_prompt, retriever
 # Maps specific toxic phrases to the CCPA sections they likely violate.
 # ---------------------------------------------------------------------------
 HEURISTICS = {
+    # Existing rules
     "sell data without consent": ["Section 1798.120", "Section 1798.135"],
     "without notifying users": ["Section 1798.130", "Section 1798.100"],
     "ignore deletion request": ["Section 1798.105"],
     "deny opt-out": ["Section 1798.120", "Section 1798.135"],
     "charge higher price for privacy users": ["Section 1798.125"],
+    
+    # New high-confidence rules
+    "sell personal data of 14-year-old": ["Section 1798.120"],
+    "sell personal data of 15-year-old": ["Section 1798.120"],
+    "sell personal data of 16-year-old without opt in": ["Section 1798.120"],
+    "waive ccpa rights in contract": ["Section 1798.192"],
+    "no do not sell link": ["Section 1798.135"],
+    "retain data forever": ["Section 1798.100"],
 }
 
 
