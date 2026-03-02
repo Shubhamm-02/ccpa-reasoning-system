@@ -7,6 +7,7 @@ A hackathon project that parses the California Consumer Privacy Act (CCPA) from 
 - **`ccpa_sections.json`**: The extracted sections (you don't strictly need to re-run the parser unless this file is deleted).
 - **`retrieval.py`**: Uses `sentence-transformers` and `faiss-cpu` to index sections and perform natural language semantic search.
 - **`reasoning.py`**: Uses `llama-cpp-python` and a local Llama 3 8B model to evaluate business scenarios against the retrieved CCPA sections, outputting strict JSON compliance judgements.
+- **`compliance_checker.py`**: The top-level entry point that uses keyword heuristics to short-circuit obvious violations before falling back to the LLM reasoning engine.
 
 ## Setup Instructions
 
@@ -46,3 +47,9 @@ python retrieval.py
 python reasoning.py
 ```
 *(This will run 6 diverse test scenarios through the local Llama model. It might take 10-20 seconds to load the model into RAM for the first time.)*
+
+**Test the Compliance Checker (Top-Level):**
+```bash
+python compliance_checker.py
+```
+*(This tests the heuristic short-circuits and LLM fallbacks.)*
